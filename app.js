@@ -1,12 +1,13 @@
 // Subtle scroll effect for navbar
+// Subtle scroll effect for navbar updated for high contrast readability
 window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
   if (window.scrollY > 50) {
-    nav.classList.add("h-16", "bg-secondary/90");
-    nav.classList.remove("h-20", "bg-secondary/60");
+    nav.classList.add("h-16", "bg-surface-container/95", "backdrop-blur-md", "border-b", "border-outline-variant/30");
+    nav.classList.remove("h-20", "bg-transparent");
   } else {
-    nav.classList.add("h-20", "bg-secondary/60");
-    nav.classList.remove("h-16", "bg-secondary/90");
+    nav.classList.add("h-20", "bg-transparent");
+    nav.classList.remove("h-16", "bg-surface-container/95", "backdrop-blur-md", "border-b", "border-outline-variant/30");
   }
 });
 
