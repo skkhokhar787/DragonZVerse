@@ -20,53 +20,43 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-tertiary": "#422c00",
-                        "on-background": "#dfe2f1",
-                        "outline": "#a58c7b",
-                        "primary": "#ffb781",
-                        "inverse-primary": "#934b00",
-                        "on-tertiary-fixed": "#271900",
-                        "on-tertiary-container": "#4e3600",
-                        "secondary-container": "#3e4960",
-                        "secondary": "#bbc6e2",
-                        "tertiary": "#ffba27",
-                        "surface": "#0f131d",
-                        "on-surface-variant": "#dec1ae",
-                        "inverse-on-surface": "#2c303b",
-                        "surface-container-highest": "#313540",
-                        "error-container": "#93000a",
-                        "background": "#0f131d",
-                        "surface-container-high": "#262a35",
-                        "on-tertiary-fixed-variant": "#5e4100",
-                        "on-error": "#690005",
-                        "on-surface": "#dfe2f1",
-                        "surface-tint": "#ffb781",
-                        "surface-dim": "#0f131d",
-                        "on-secondary-container": "#adb8d3",
-                        "inverse-surface": "#dfe2f1",
-                        "on-primary-container": "#5d2e00",
-                        "secondary-fixed": "#d7e2ff",
-                        "surface-variant": "#313540",
-                        "tertiary-container": "#d69900",
-                        "primary-fixed": "#ffdcc4",
-                        "secondary-fixed-dim": "#bbc6e2",
-                        "error": "#ffb4ab",
-                        "on-primary": "#4e2500",
-                        "surface-container-low": "#171b26",
-                        "outline-variant": "#574335",
-                        "surface-bright": "#353944",
-                        "tertiary-fixed-dim": "#ffba27",
-                        "on-secondary": "#263046",
-                        "primary-container": "#fb8500",
-                        "primary-fixed-dim": "#ffb781",
-                        "on-primary-fixed-variant": "#703800",
-                        "on-secondary-fixed": "#101b30",
-                        "on-secondary-fixed-variant": "#3c475d",
-                        "surface-container": "#1c1f2a",
-                        "on-error-container": "#ffdad6",
-                        "on-primary-fixed": "#301400",
-                        "surface-container-lowest": "#0a0e18",
-                        "tertiary-fixed": "#ffdea9"
+                        "background": "#220901",
+                        "surface": "#220901",
+                        "surface-dim": "#1b0701",
+                        "surface-container-lowest": "#140500",
+                        "surface-container-low": "#3c0e05",
+                        "surface-container": "#4d1206",
+                        "surface-container-high": "#621708",
+                        "surface-container-highest": "#781c0a",
+
+                        "primary": "#f6aa1c",
+                        "primary-container": "#bc3908",
+                        "on-primary": "#220901",
+                        "on-primary-fixed": "#ffffff",
+                        "on-primary-fixed-variant": "#ffdcc4",
+                        "primary-fixed": "#fde4b3",
+                        "primary-fixed-dim": "#f6aa1c",
+
+                        "secondary": "#bc3908",
+                        "secondary-container": "#621708",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#f6aa1c",
+
+                        "tertiary": "#941b0c",
+                        "tertiary-container": "#bc3908",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ffffff",
+
+                        "on-background": "#fbead5",
+                        "on-surface": "#fbead5",
+                        "on-surface-variant": "#d19a8e",
+
+                        "outline": "#941b0c",
+                        "outline-variant": "#621708",
+                        "error": "#941b0c",
+                        "error-container": "#440b03",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#ffdad6"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -125,20 +115,23 @@
             }
         }
 
+        /* Adjusted to match the deep maroon base with warm rust borders */
         .glass-card {
-            background: rgba(27, 38, 59, 0.6);
+            background: rgba(98, 23, 8, 0.35);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(65, 90, 119, 0.3);
+            border: 1px solid rgba(188, 57, 8, 0.3);
         }
 
+        /* Blends to the deep pitch-black background */
         .hero-gradient {
-            background: linear-gradient(to top, #0f131d 0%, transparent 100%);
+            background: linear-gradient(to top, #220901 0%, transparent 100%);
         }
 
+        /* Glowing Ki meter shifting from deep rust orange to sparkling gold */
         .power-bar-fill {
             transition: width 1s ease-out;
-            background: linear-gradient(90deg, #fb8500, #ffba27);
-            box-shadow: 0 0 10px rgba(251, 133, 0, 0.8);
+            background: linear-gradient(90deg, #bc3908, #f6aa1c);
+            box-shadow: 0 0 12px rgba(246, 170, 28, 0.7);
             border-radius: 9999px;
         }
     </style>
