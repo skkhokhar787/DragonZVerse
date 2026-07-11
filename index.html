@@ -20,43 +20,49 @@
             theme: {
                 extend: {
                     "colors": {
-                        "background": "#220901",
-                        "surface": "#220901",
-                        "surface-dim": "#1b0701",
-                        "surface-container-lowest": "#140500",
-                        "surface-container-low": "#3c0e05",
-                        "surface-container": "#4d1206",
-                        "surface-container-high": "#621708",
-                        "surface-container-highest": "#781c0a",
+                        // Deep Ocean Background System
+                        "background": "#001219",
+                        "surface": "#001219",
+                        "surface-dim": "#000f14",
+                        "surface-container-lowest": "#000a0d",
+                        "surface-container-low": "#00232c",
+                        "surface-container": "#002e3b",
+                        "surface-container-high": "#005f73",
+                        "surface-container-highest": "#0a9396",
 
-                        "primary": "#f6aa1c",
-                        "primary-container": "#bc3908",
-                        "on-primary": "#220901",
+                        // Sunset Amber & Gold as Primary Accents
+                        "primary": "#ee9b00",
+                        "primary-container": "#ca6702",
+                        "on-primary": "#001219",
                         "on-primary-fixed": "#ffffff",
-                        "on-primary-fixed-variant": "#ffdcc4",
-                        "primary-fixed": "#fde4b3",
-                        "primary-fixed-dim": "#f6aa1c",
+                        "on-primary-fixed-variant": "#e9d8a6",
+                        "primary-fixed": "#e9d8a6",
+                        "primary-fixed-dim": "#ee9b00",
 
-                        "secondary": "#bc3908",
-                        "secondary-container": "#621708",
-                        "on-secondary": "#ffffff",
-                        "on-secondary-container": "#f6aa1c",
+                        // Deep Emerald Teal as Secondary System
+                        "secondary": "#94d2bd",
+                        "secondary-container": "#005f73",
+                        "on-secondary": "#001219",
+                        "on-secondary-container": "#94d2bd",
 
-                        "tertiary": "#941b0c",
-                        "tertiary-container": "#bc3908",
+                        // Intense Crimson Magma as Tertiary System
+                        "tertiary": "#ae2012",
+                        "tertiary-container": "#bb3e03",
                         "on-tertiary": "#ffffff",
-                        "on-tertiary-container": "#ffffff",
+                        "on-tertiary-container": "#9b2226",
 
-                        "on-background": "#fbead5",
-                        "on-surface": "#fbead5",
-                        "on-surface-variant": "#d19a8e",
+                        // UI Readability Systems
+                        "on-background": "#e9d8a6",
+                        "on-surface": "#e9d8a6",
+                        "on-surface-variant": "#94d2bd",
 
-                        "outline": "#941b0c",
-                        "outline-variant": "#621708",
-                        "error": "#941b0c",
-                        "error-container": "#440b03",
+                        // Outline & Alert Statuses
+                        "outline": "#0a9396",
+                        "outline-variant": "#005f73",
+                        "error": "#9b2226",
+                        "error-container": "#ae2012",
                         "on-error": "#ffffff",
-                        "on-error-container": "#ffdad6"
+                        "on-error-container": "#e9d8a6"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -115,23 +121,23 @@
             }
         }
 
-        /* Adjusted to match the deep maroon base with warm rust borders */
+        /* Refitted to utilize translucent deep teal with a sharp emerald boundary border */
         .glass-card {
-            background: rgba(98, 23, 8, 0.35);
+            background: rgba(0, 95, 115, 0.25);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(188, 57, 8, 0.3);
+            border: 1px solid rgba(10, 147, 150, 0.35);
         }
 
-        /* Blends to the deep pitch-black background */
+        /* Fades beautifully into the dark abyssal background color */
         .hero-gradient {
-            background: linear-gradient(to top, #220901 0%, transparent 100%);
+            background: linear-gradient(to top, #001219 0%, transparent 100%);
         }
 
-        /* Glowing Ki meter shifting from deep rust orange to sparkling gold */
+        /* Power bar transitions vividly from bright sunset amber into fiery crimson */
         .power-bar-fill {
             transition: width 1s ease-out;
-            background: linear-gradient(90deg, #bc3908, #f6aa1c);
-            box-shadow: 0 0 12px rgba(246, 170, 28, 0.7);
+            background: linear-gradient(90deg, #ee9b00, #bb3e03, #9b2226);
+            box-shadow: 0 0 12px rgba(238, 155, 0, 0.65);
             border-radius: 9999px;
         }
     </style>

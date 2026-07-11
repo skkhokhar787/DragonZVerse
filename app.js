@@ -92,7 +92,7 @@ function getKiPercentage(kiStr) {
 function pulseLoaderSVG(size = 120) {
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="width:${size}px;height:${size}px;">
-        <circle fill="none" stroke-opacity="1" stroke="#ffba27" stroke-width=".5" cx="100" cy="100" r="0">
+        <circle fill="none" stroke-opacity="1" stroke="#ee9b00" stroke-width=".5" cx="100" cy="100" r="0">
             <animate attributeName="r" calcMode="spline" dur="2" values="1;80" keyTimes="0;1" keySplines="0 .2 .5 1" repeatCount="indefinite"></animate>
             <animate attributeName="stroke-width" calcMode="spline" dur="2" values="0;25" keyTimes="0;1" keySplines="0 .2 .5 1" repeatCount="indefinite"></animate>
             <animate attributeName="stroke-opacity" calcMode="spline" dur="2" values="1;0" keyTimes="0;1" keySplines="0 .2 .5 1" repeatCount="indefinite"></animate>
@@ -691,15 +691,15 @@ function buildCharacterDetailHTML(char, charDescEnglish, planetDescEnglish) {
   const percentage = getKiPercentage(char.ki);
   const maxPercentage = getKiPercentage(char.maxKi);
 
-    let transformationsHtml = "";
-    if (char.transformations && char.transformations.length > 0) {
-      transformationsHtml += `
+  let transformationsHtml = "";
+  if (char.transformations && char.transformations.length > 0) {
+    transformationsHtml += `
                         <div class="mt-8 border-t border-outline/30 pt-6">
                             <h4 class="font-headline-md text-headline-md text-tertiary mb-4 tracking-wide">MULTIVERSE EVOLUTIONS</h4>
                             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                     `;
-      char.transformations.forEach((t) => {
-        transformationsHtml += `
+    char.transformations.forEach((t) => {
+      transformationsHtml += `
                             <div class="glass-card rounded-lg overflow-hidden p-3 flex flex-col gap-2 group hover:border-primary transition-all duration-300">
                                 <div class="h-32 bg-surface-container-low flex items-center justify-center p-2 rounded overflow-hidden">
                                     <img class="max-h-full object-contain group-hover:scale-105 transition-transform duration-300" src="${t.image}" alt="${t.name}" />
@@ -711,28 +711,28 @@ function buildCharacterDetailHTML(char, charDescEnglish, planetDescEnglish) {
                                 </div>
                             </div>
                         `;
-      });
-      transformationsHtml += `</div></div>`;
-    } else {
-      transformationsHtml = `
+    });
+    transformationsHtml += `</div></div>`;
+  } else {
+    transformationsHtml = `
                         <div class="mt-8 border-t border-outline/30 pt-6">
                             <h4 class="font-headline-md text-headline-md text-tertiary mb-2">MULTIVERSE EVOLUTIONS</h4>
                             <p class="text-on-surface-variant text-sm italic">This character has no recorded planetary or genetic transformations in the database.</p>
                         </div>
                     `;
+  }
+
+  let planetHtml = "";
+  if (char.originPlanet) {
+    let planetBadge =
+      "bg-emerald-950/80 text-emerald-300 border border-emerald-500/30";
+    let planetStatus = "Safe Planet";
+    if (char.originPlanet.isDestroyed) {
+      planetBadge = "bg-red-950/80 text-red-300 border border-red-500/30";
+      planetStatus = "Planet Destroyed";
     }
 
-    let planetHtml = "";
-    if (char.originPlanet) {
-      let planetBadge =
-        "bg-emerald-950/80 text-emerald-300 border border-emerald-500/30";
-      let planetStatus = "Safe Planet";
-      if (char.originPlanet.isDestroyed) {
-        planetBadge = "bg-red-950/80 text-red-300 border border-red-500/30";
-        planetStatus = "Planet Destroyed";
-      }
-
-      planetHtml = `
+    planetHtml = `
                         <div class="mt-8 border-t border-outline/30 pt-6">
                             <h4 class="font-headline-md text-headline-md text-tertiary mb-4">ORIGIN PLANET</h4>
                             <div class="glass-card rounded-xl overflow-hidden flex flex-col sm:flex-row items-center gap-6 p-4">
@@ -749,7 +749,7 @@ function buildCharacterDetailHTML(char, charDescEnglish, planetDescEnglish) {
                             </div>
                         </div>
                     `;
-    }
+  }
 
   return `
                     <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
@@ -831,11 +831,7 @@ async function showCharacterDetailPage(id, updateHash = true) {
   document.getElementById("main-character-detail").classList.remove("hidden");
 
   if (updateHash) {
-    history.pushState(
-      { tab: "character-detail", id },
-      "",
-      `#character/${id}`,
-    );
+    history.pushState({ tab: "character-detail", id }, "", `#character/${id}`);
   }
 
   const content = document.getElementById("character-detail-content");
