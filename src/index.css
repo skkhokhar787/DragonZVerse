@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.energy-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.glass-card {
+  background: rgba(0, 95, 115, 0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(10, 147, 150, 0.35);
+}
+
+.hero-gradient {
+  background: linear-gradient(to top, #001219 0%, transparent 100%);
+}
+
+.power-bar-fill {
+  transition: width 1s ease-out;
+  background: linear-gradient(90deg, #ee9b00, #bb3e03, #9b2226);
+  box-shadow: 0 0 12px rgba(238, 155, 0, 0.65);
+  border-radius: 9999px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
