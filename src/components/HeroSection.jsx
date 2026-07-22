@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchCharacterById } from "../api/dragonball";
 import { translateToEnglish } from "../utils/translate";
+import { getEnglishName } from "../utils/names";
 
 const FEATURED_IDS = [1, 2, 4, 11, 24];
 
@@ -45,7 +46,7 @@ export default function HeroSection() {
               Featured {character.race}
             </span>
             <h1 className="font-display-lg text-display-lg text-on-background mb-4 leading-none uppercase">
-              {character.name}
+              {getEnglishName(character.name)}
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 min-h-[80px]">
               {description}
@@ -72,7 +73,7 @@ export default function HeroSection() {
                 imgVisible ? "opacity-100" : "opacity-0"
               }`}
               src={character.image}
-              alt={character.name}
+              alt={getEnglishName(character.name)}
             />
           </div>
         </div>

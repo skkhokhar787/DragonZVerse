@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchPlanetById, fetchCharacters } from "../api/dragonball";
 import { translateToEnglish } from "../utils/translate";
+import { getEnglishName } from "../utils/names";
 
 export default function PlanetDetailPage() {
   const { id } = useParams();
@@ -128,11 +129,11 @@ export default function PlanetDetailPage() {
                     <img
                       className="max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
                       src={f.image}
-                      alt={f.name}
+                      alt={getEnglishName(f.name)}
                     />
                   </div>
                   <span className="font-semibold text-sm truncate text-on-surface text-center">
-                    {f.name}
+                    {getEnglishName(f.name)}
                   </span>
                   <div className="flex justify-between items-center text-[10px] text-on-surface-variant border-t border-outline/10 pt-1 mt-1">
                     <span>KI</span>

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { fetchCharacterById } from "../api/dragonball";
 import { translateToEnglish } from "../utils/translate";
 import { getKiPercentage } from "../utils/ki";
+import { getEnglishName } from "../utils/names";
 import PowerBar from "../components/PowerBar";
 
 export default function CharacterDetailPage() {
@@ -90,7 +91,7 @@ export default function CharacterDetailPage() {
               <img
                 className="max-h-full object-contain filter drop-shadow-[0_0_25px_rgba(255,183,129,0.4)] relative z-10"
                 src={character.image}
-                alt={character.name}
+                alt={getEnglishName(character.name)}
               />
             </div>
             <div className="flex flex-wrap gap-2 justify-center mt-4">
@@ -108,7 +109,7 @@ export default function CharacterDetailPage() {
 
           <div className="flex-grow w-full md:w-2/3">
             <h2 className="font-display-lg text-4xl text-primary leading-none mb-2 uppercase tracking-wide">
-              {character.name}
+              {getEnglishName(character.name)}
             </h2>
 
             <div className="my-6 glass-card p-4 rounded-xl border border-outline/10 flex flex-col gap-4">

@@ -59,4 +59,10 @@ export default function CharacterListItem({ character }) {
             </span>
           </div>
           <div className="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-            <div className="power-bar-fill h-full" style={{ width: `${
+            <div className="power-bar-fill h-full" style={{ width: `${percentage}%` }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

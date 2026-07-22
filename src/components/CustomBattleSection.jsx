@@ -199,7 +199,7 @@ export default function CustomBattleSection() {
                   <span className="material-symbols-outlined text-primary text-5xl energy-pulse">emoji_events</span>
                   <div className="text-center">
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Winner</p>
-                    <p className="font-headline-md text-headline-md text-primary">{winner.name}</p>
+                    <p className="font-headline-md text-headline-md text-primary">{getEnglishName(winner.name)}</p>
                   </div>
                   {reason && (
                     <div className="mt-2 max-w-[260px] glass-card rounded-xl px-4 py-3 border border-primary/20">
